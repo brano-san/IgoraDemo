@@ -1,0 +1,17 @@
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.csproj.AssemblyReference.cache
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.CustomControls.ProductControl.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.MainForm.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.csproj.GenerateResource.cache
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Properties.Resources.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.csproj.CoreCompileInputs.cache
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\IgoraDemo.exe.config
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\IgoraDemo.exe
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\IgoraDemo.pdb
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\EntityFramework.dll
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\EntityFramework.xml
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.csproj.Up2Date
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.exe
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.pdb
