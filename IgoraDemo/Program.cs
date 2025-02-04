@@ -8,6 +8,8 @@ namespace IgoraDemo
 {
     internal static class Program
     {
+        public static IgoraDB context = new IgoraDB();
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

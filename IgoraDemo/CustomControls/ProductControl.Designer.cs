@@ -32,7 +32,6 @@
             this.discount = new System.Windows.Forms.Label();
             this.costDiscLabel = new System.Windows.Forms.Label();
             this.costLabel = new System.Windows.Forms.Label();
-            this.develLabel = new System.Windows.Forms.Label();
             this.descLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,7 +46,6 @@
             this.groupBox1.Controls.Add(this.discount);
             this.groupBox1.Controls.Add(this.costDiscLabel);
             this.groupBox1.Controls.Add(this.costLabel);
-            this.groupBox1.Controls.Add(this.develLabel);
             this.groupBox1.Controls.Add(this.descLabel);
             this.groupBox1.Controls.Add(this.nameLabel);
             this.groupBox1.Location = new System.Drawing.Point(123, 7);
@@ -59,54 +57,50 @@
             // discount
             // 
             this.discount.AutoSize = true;
+            this.discount.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discount.Location = new System.Drawing.Point(7, 106);
             this.discount.Name = "discount";
-            this.discount.Size = new System.Drawing.Size(35, 13);
+            this.discount.Size = new System.Drawing.Size(36, 15);
             this.discount.TabIndex = 5;
             this.discount.Text = "label1";
             // 
             // costDiscLabel
             // 
             this.costDiscLabel.AutoSize = true;
+            this.costDiscLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.costDiscLabel.Location = new System.Drawing.Point(154, 79);
             this.costDiscLabel.Name = "costDiscLabel";
-            this.costDiscLabel.Size = new System.Drawing.Size(35, 13);
+            this.costDiscLabel.Size = new System.Drawing.Size(36, 15);
             this.costDiscLabel.TabIndex = 4;
             this.costDiscLabel.Text = "label1";
             // 
             // costLabel
             // 
             this.costLabel.AutoSize = true;
+            this.costLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.costLabel.Location = new System.Drawing.Point(6, 79);
             this.costLabel.Name = "costLabel";
-            this.costLabel.Size = new System.Drawing.Size(35, 13);
+            this.costLabel.Size = new System.Drawing.Size(36, 15);
             this.costLabel.TabIndex = 3;
             this.costLabel.Text = "label1";
-            // 
-            // develLabel
-            // 
-            this.develLabel.AutoSize = true;
-            this.develLabel.Location = new System.Drawing.Point(6, 61);
-            this.develLabel.Name = "develLabel";
-            this.develLabel.Size = new System.Drawing.Size(35, 13);
-            this.develLabel.TabIndex = 2;
-            this.develLabel.Text = "label1";
             // 
             // descLabel
             // 
             this.descLabel.AutoSize = true;
+            this.descLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.descLabel.Location = new System.Drawing.Point(6, 41);
             this.descLabel.Name = "descLabel";
-            this.descLabel.Size = new System.Drawing.Size(35, 13);
+            this.descLabel.Size = new System.Drawing.Size(36, 15);
             this.descLabel.TabIndex = 1;
             this.descLabel.Text = "label1";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameLabel.Location = new System.Drawing.Point(7, 20);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 13);
+            this.nameLabel.Size = new System.Drawing.Size(36, 15);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "label1";
             // 
@@ -123,18 +117,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(467, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.Size = new System.Drawing.Size(30, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Есть";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(424, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.Size = new System.Drawing.Size(129, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Количество на складе:";
             // 
@@ -142,12 +138,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(227)))), ((int)(((byte)(131)))));
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ProductControl";
-            this.Size = new System.Drawing.Size(561, 169);
+            this.Size = new System.Drawing.Size(557, 165);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -162,7 +160,6 @@
         private System.Windows.Forms.Label discount;
         private System.Windows.Forms.Label costDiscLabel;
         private System.Windows.Forms.Label costLabel;
-        private System.Windows.Forms.Label develLabel;
         private System.Windows.Forms.Label descLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
