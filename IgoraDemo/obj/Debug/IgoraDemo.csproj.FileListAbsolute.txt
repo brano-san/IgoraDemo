@@ -34,3 +34,4 @@ D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.csproj.CopyComplete
 D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.exe
 D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.pdb
 D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ParentForm.resources
+D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AuthForm.resources
