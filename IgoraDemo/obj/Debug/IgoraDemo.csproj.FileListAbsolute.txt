@@ -40,3 +40,4 @@ C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.Parent
 C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AdminAddEditForm.resources
 C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AdminMainForm.resources
 C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ManagerMainForm.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ClientHistory.resources

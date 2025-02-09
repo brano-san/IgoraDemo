@@ -10,6 +10,8 @@ namespace IgoraDemo
 {
     public partial class MainForm : ParentForm
     {
+        private int clientId = -1;
+
         public MainForm()
         {
             InitializeComponent();
@@ -40,6 +42,9 @@ namespace IgoraDemo
                         var count = Program.context.orders_.Where(o => o.id_client == authForm.Id).Sum(o => o.services_.cost) ?? 0;
                         var discount = DiscountCalculation.calculateDiscount((int)count);
                         UpdateFlowPanel(discount);
+                        HistoryBtn.Visible = true;
+                        HistoryBtn.Enabled = true;
+                        clientId = authForm.Id;
                     break;
                     case "manager":
                         authLabel.Text = $"Вы авторизовались как менеджер: {authForm.UserName}";
@@ -66,6 +71,21 @@ namespace IgoraDemo
             adminForm.Owner = this;
             this.Hide();
             adminForm.ShowDialog();
+        }
+
+        private void HistoryBtn_Click(object sender, System.EventArgs e)
+        {
+            var client = Program.context.clients_.FirstOrDefault(c => c.id_client == clientId);
+
+            if (client == null)
+            {
+                return;
+            }
+
+            var historyForm = new ClientHistory(client);
+            historyForm.Owner = this;
+            this.Hide();
+            historyForm.ShowDialog();
         }
     }
 }

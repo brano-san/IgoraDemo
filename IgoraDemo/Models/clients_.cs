@@ -38,6 +38,8 @@ namespace IgoraDemo
         [StringLength(255)]
         public string password { get; set; }
 
+        public int? rating { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orders_> orders_ { get; set; }
     }

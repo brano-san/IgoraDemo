@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.HistoryBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.HistoryBtn);
             this.splitContainer1.Panel1.Controls.Add(this.adminBtn);
             this.splitContainer1.Panel1.Controls.Add(this.authLabel);
             this.splitContainer1.Panel1.Controls.Add(this.authBtn);
@@ -141,6 +143,22 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1045, 462);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // HistoryBtn
+            // 
+            this.HistoryBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.HistoryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.HistoryBtn.Enabled = false;
+            this.HistoryBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HistoryBtn.Location = new System.Drawing.Point(892, 54);
+            this.HistoryBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.HistoryBtn.Name = "HistoryBtn";
+            this.HistoryBtn.Size = new System.Drawing.Size(140, 32);
+            this.HistoryBtn.TabIndex = 5;
+            this.HistoryBtn.Text = "История";
+            this.HistoryBtn.UseVisualStyleBackColor = false;
+            this.HistoryBtn.Visible = false;
+            this.HistoryBtn.Click += new System.EventHandler(this.HistoryBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -172,6 +190,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label authLabel;
         private System.Windows.Forms.Button adminBtn;
+        private System.Windows.Forms.Button HistoryBtn;
     }
 }
 
