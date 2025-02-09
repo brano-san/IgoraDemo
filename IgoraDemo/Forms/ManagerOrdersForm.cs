@@ -81,8 +81,8 @@ namespace IgoraDemo.Forms
                 Program.context.SaveChanges();
             }
 
-            MessageBox.Show("Статус был обновлён!", "Статус", MessageBoxButtons.OK, MessageBoxIcon.Information);
             UpdateData();
+            MessageBox.Show("Статус был обновлён!", "Статус", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

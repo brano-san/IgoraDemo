@@ -540,6 +540,8 @@ namespace IgoraDemo.Models {
             
             private global::System.Data.DataColumn columnpassword;
             
+            private global::System.Data.DataColumn columnrating;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public _clients_DataTable() {
@@ -639,6 +641,14 @@ namespace IgoraDemo.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ratingColumn {
+                get {
+                    return this.columnrating;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -674,7 +684,7 @@ namespace IgoraDemo.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public _clients_Row Add_clients_Row(string fio, double code, string pasport, System.DateTime born_date, string address, string email, string password) {
+            public _clients_Row Add_clients_Row(string fio, double code, string pasport, System.DateTime born_date, string address, string email, string password, int rating) {
                 _clients_Row row_clients_Row = ((_clients_Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -684,7 +694,8 @@ namespace IgoraDemo.Models {
                         born_date,
                         address,
                         email,
-                        password};
+                        password,
+                        rating};
                 row_clients_Row.ItemArray = columnValuesArray;
                 this.Rows.Add(row_clients_Row);
                 return row_clients_Row;
@@ -722,6 +733,7 @@ namespace IgoraDemo.Models {
                 this.columnaddress = base.Columns["address"];
                 this.columnemail = base.Columns["email"];
                 this.columnpassword = base.Columns["password"];
+                this.columnrating = base.Columns["rating"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -743,6 +755,8 @@ namespace IgoraDemo.Models {
                 base.Columns.Add(this.columnemail);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
+                this.columnrating = new global::System.Data.DataColumn("rating", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrating);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_client}, true));
                 this.columnid_client.AutoIncrement = true;
@@ -2926,6 +2940,22 @@ namespace IgoraDemo.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int rating {
+                get {
+                    try {
+                        return ((int)(this[this._tableclients_.ratingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'rating\' в таблице \'clients$\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._tableclients_.ratingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsfioNull() {
                 return this.IsNull(this._tableclients_.fioColumn);
             }
@@ -3006,6 +3036,18 @@ namespace IgoraDemo.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetpasswordNull() {
                 this[this._tableclients_.passwordColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsratingNull() {
+                return this.IsNull(this._tableclients_.ratingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetratingNull() {
+                this[this._tableclients_.ratingColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4234,10 +4276,11 @@ namespace IgoraDemo.Models.IgoraDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("address", "address");
             tableMapping.ColumnMappings.Add("email", "email");
             tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("rating", "rating");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[clients$] WHERE (([id_client] = @Original_id_client) AND ((@IsNull_fio = 1 AND [fio] IS NULL) OR ([fio] = @Original_fio)) AND ((@IsNull_code = 1 AND [code] IS NULL) OR ([code] = @Original_code)) AND ((@IsNull_pasport = 1 AND [pasport] IS NULL) OR ([pasport] = @Original_pasport)) AND ((@IsNull_born_date = 1 AND [born_date] IS NULL) OR ([born_date] = @Original_born_date)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [clients$] WHERE (([id_client] = @Original_id_client) AND ((@IsNull_fio = 1 AND [fio] IS NULL) OR ([fio] = @Original_fio)) AND ((@IsNull_code = 1 AND [code] IS NULL) OR ([code] = @Original_code)) AND ((@IsNull_pasport = 1 AND [pasport] IS NULL) OR ([pasport] = @Original_pasport)) AND ((@IsNull_born_date = 1 AND [born_date] IS NULL) OR ([born_date] = @Original_born_date)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_rating = 1 AND [rating] IS NULL) OR ([rating] = @Original_rating)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4254,10 +4297,12 @@ namespace IgoraDemo.Models.IgoraDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[clients$] ([fio], [code], [pasport], [born_date], [address], [email], [password]) VALUES (@fio, @code, @pasport, @born_date, @address, @email, @password);
-SELECT id_client, fio, code, pasport, born_date, address, email, password FROM clients$ WHERE (id_client = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [clients$] ([fio], [code], [pasport], [born_date], [address], [email], [password], [rating]) VALUES (@fio, @code, @pasport, @born_date, @address, @email, @password, @rating);
+SELECT id_client, fio, code, pasport, born_date, address, email, password, rating FROM clients$ WHERE (id_client = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fio", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4266,10 +4311,11 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[clients$] SET [fio] = @fio, [code] = @code, [pasport] = @pasport, [born_date] = @born_date, [address] = @address, [email] = @email, [password] = @password WHERE (([id_client] = @Original_id_client) AND ((@IsNull_fio = 1 AND [fio] IS NULL) OR ([fio] = @Original_fio)) AND ((@IsNull_code = 1 AND [code] IS NULL) OR ([code] = @Original_code)) AND ((@IsNull_pasport = 1 AND [pasport] IS NULL) OR ([pasport] = @Original_pasport)) AND ((@IsNull_born_date = 1 AND [born_date] IS NULL) OR ([born_date] = @Original_born_date)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)));
-SELECT id_client, fio, code, pasport, born_date, address, email, password FROM clients$ WHERE (id_client = @id_client)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [clients$] SET [fio] = @fio, [code] = @code, [pasport] = @pasport, [born_date] = @born_date, [address] = @address, [email] = @email, [password] = @password, [rating] = @rating WHERE (([id_client] = @Original_id_client) AND ((@IsNull_fio = 1 AND [fio] IS NULL) OR ([fio] = @Original_fio)) AND ((@IsNull_code = 1 AND [code] IS NULL) OR ([code] = @Original_code)) AND ((@IsNull_pasport = 1 AND [pasport] IS NULL) OR ([pasport] = @Original_pasport)) AND ((@IsNull_born_date = 1 AND [born_date] IS NULL) OR ([born_date] = @Original_born_date)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_rating = 1 AND [rating] IS NULL) OR ([rating] = @Original_rating)));
+SELECT id_client, fio, code, pasport, born_date, address, email, password, rating FROM clients$ WHERE (id_client = @id_client)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fio", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4278,6 +4324,7 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fio", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4293,6 +4340,8 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_password", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_client", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4309,8 +4358,8 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_client, fio, code, pasport, born_date, address, email, password FROM db" +
-                "o.clients$";
+            this._commandCollection[0].CommandText = "SELECT id_client, fio, code, pasport, born_date, address, email, password, rating" +
+                " FROM clients$";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4371,7 +4420,7 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_client, string Original_fio, global::System.Nullable<double> Original_code, string Original_pasport, global::System.Nullable<global::System.DateTime> Original_born_date, string Original_address, string Original_email, string Original_password) {
+        public virtual int Delete(int Original_id_client, string Original_fio, global::System.Nullable<double> Original_code, string Original_pasport, global::System.Nullable<global::System.DateTime> Original_born_date, string Original_address, string Original_email, string Original_password, global::System.Nullable<int> Original_rating) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_client));
             if ((Original_fio == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4429,6 +4478,14 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_password));
             }
+            if ((Original_rating.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_rating.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4449,7 +4506,7 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string fio, global::System.Nullable<double> code, string pasport, global::System.Nullable<global::System.DateTime> born_date, string address, string email, string password) {
+        public virtual int Insert(string fio, global::System.Nullable<double> code, string pasport, global::System.Nullable<global::System.DateTime> born_date, string address, string email, string password, global::System.Nullable<int> rating) {
             if ((fio == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4492,6 +4549,12 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(password));
             }
+            if ((rating.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(rating.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4520,6 +4583,7 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
                     string address, 
                     string email, 
                     string password, 
+                    global::System.Nullable<int> rating, 
                     int Original_id_client, 
                     string Original_fio, 
                     global::System.Nullable<double> Original_code, 
@@ -4528,6 +4592,7 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
                     string Original_address, 
                     string Original_email, 
                     string Original_password, 
+                    global::System.Nullable<int> Original_rating, 
                     int id_client) {
             if ((fio == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -4571,64 +4636,78 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(password));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_id_client));
-            if ((Original_fio == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((rating.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(rating.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_fio));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_client));
+            if ((Original_fio == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_fio));
             }
             if ((Original_code.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_code.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_code.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_pasport == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_pasport));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_pasport));
             }
             if ((Original_born_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_born_date.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_born_date.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_address == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_address));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_address));
             }
             if ((Original_email == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_email));
             }
             if ((Original_password == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_password));
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(id_client));
+            if ((Original_rating.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_rating.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(id_client));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4649,8 +4728,25 @@ SELECT id_client, fio, code, pasport, born_date, address, email, password FROM c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string fio, global::System.Nullable<double> code, string pasport, global::System.Nullable<global::System.DateTime> born_date, string address, string email, string password, int Original_id_client, string Original_fio, global::System.Nullable<double> Original_code, string Original_pasport, global::System.Nullable<global::System.DateTime> Original_born_date, string Original_address, string Original_email, string Original_password) {
-            return this.Update(fio, code, pasport, born_date, address, email, password, Original_id_client, Original_fio, Original_code, Original_pasport, Original_born_date, Original_address, Original_email, Original_password, Original_id_client);
+        public virtual int Update(
+                    string fio, 
+                    global::System.Nullable<double> code, 
+                    string pasport, 
+                    global::System.Nullable<global::System.DateTime> born_date, 
+                    string address, 
+                    string email, 
+                    string password, 
+                    global::System.Nullable<int> rating, 
+                    int Original_id_client, 
+                    string Original_fio, 
+                    global::System.Nullable<double> Original_code, 
+                    string Original_pasport, 
+                    global::System.Nullable<global::System.DateTime> Original_born_date, 
+                    string Original_address, 
+                    string Original_email, 
+                    string Original_password, 
+                    global::System.Nullable<int> Original_rating) {
+            return this.Update(fio, code, pasport, born_date, address, email, password, rating, Original_id_client, Original_fio, Original_code, Original_pasport, Original_born_date, Original_address, Original_email, Original_password, Original_rating, Original_id_client);
         }
     }
     
