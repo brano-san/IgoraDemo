@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.CartBtn = new System.Windows.Forms.Button();
             this.HistoryBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.authLabel = new System.Windows.Forms.Label();
@@ -37,7 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.CartBtn = new System.Windows.Forms.Button();
+            this.OrdersBtn = new System.Windows.Forms.Button();
+            this.ClientsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -55,6 +57,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.ClientsBtn);
+            this.splitContainer1.Panel1.Controls.Add(this.OrdersBtn);
             this.splitContainer1.Panel1.Controls.Add(this.CartBtn);
             this.splitContainer1.Panel1.Controls.Add(this.HistoryBtn);
             this.splitContainer1.Panel1.Controls.Add(this.adminBtn);
@@ -70,6 +74,22 @@
             this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // CartBtn
+            // 
+            this.CartBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.CartBtn.Enabled = false;
+            this.CartBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CartBtn.Location = new System.Drawing.Point(744, 94);
+            this.CartBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.CartBtn.Name = "CartBtn";
+            this.CartBtn.Size = new System.Drawing.Size(140, 32);
+            this.CartBtn.TabIndex = 6;
+            this.CartBtn.Text = "Корзина";
+            this.CartBtn.UseVisualStyleBackColor = false;
+            this.CartBtn.Visible = false;
+            this.CartBtn.Click += new System.EventHandler(this.CartBtn_Click);
             // 
             // HistoryBtn
             // 
@@ -161,21 +181,37 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1045, 462);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // CartBtn
+            // OrdersBtn
             // 
-            this.CartBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.CartBtn.Enabled = false;
-            this.CartBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CartBtn.Location = new System.Drawing.Point(744, 94);
-            this.CartBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.CartBtn.Name = "CartBtn";
-            this.CartBtn.Size = new System.Drawing.Size(140, 32);
-            this.CartBtn.TabIndex = 6;
-            this.CartBtn.Text = "Корзина";
-            this.CartBtn.UseVisualStyleBackColor = false;
-            this.CartBtn.Visible = false;
-            this.CartBtn.Click += new System.EventHandler(this.CartBtn_Click);
+            this.OrdersBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OrdersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.OrdersBtn.Enabled = false;
+            this.OrdersBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrdersBtn.Location = new System.Drawing.Point(465, 18);
+            this.OrdersBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.OrdersBtn.Name = "OrdersBtn";
+            this.OrdersBtn.Size = new System.Drawing.Size(187, 32);
+            this.OrdersBtn.TabIndex = 7;
+            this.OrdersBtn.Text = "Заказы";
+            this.OrdersBtn.UseVisualStyleBackColor = false;
+            this.OrdersBtn.Visible = false;
+            this.OrdersBtn.Click += new System.EventHandler(this.OrdersBtn_Click);
+            // 
+            // ClientsBtn
+            // 
+            this.ClientsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClientsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.ClientsBtn.Enabled = false;
+            this.ClientsBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientsBtn.Location = new System.Drawing.Point(465, 58);
+            this.ClientsBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientsBtn.Name = "ClientsBtn";
+            this.ClientsBtn.Size = new System.Drawing.Size(187, 32);
+            this.ClientsBtn.TabIndex = 8;
+            this.ClientsBtn.Text = "Клиенты";
+            this.ClientsBtn.UseVisualStyleBackColor = false;
+            this.ClientsBtn.Visible = false;
+            this.ClientsBtn.Click += new System.EventHandler(this.ClientsBtn_Click);
             // 
             // MainForm
             // 
@@ -210,6 +246,8 @@
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.Button HistoryBtn;
         private System.Windows.Forms.Button CartBtn;
+        private System.Windows.Forms.Button ClientsBtn;
+        private System.Windows.Forms.Button OrdersBtn;
     }
 }
 

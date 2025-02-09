@@ -71,6 +71,10 @@ namespace IgoraDemo
                     break;
                     case "manager":
                         authLabel.Text = $"Вы авторизовались как менеджер: {authForm.UserName}";
+                        ClientsBtn.Visible = true;
+                        ClientsBtn.Enabled = true;
+                        OrdersBtn.Visible = true;
+                        OrdersBtn.Enabled = true;
                         break;
                     case "admin":
                         authLabel.Text = $"Вы авторизовались как администратор: {authForm.UserName}";
@@ -119,6 +123,20 @@ namespace IgoraDemo
             cartForm.Owner = this;
             cartForm.ShowDialog();
             CheckCollection();
+        }
+
+        private void OrdersBtn_Click(object sender, System.EventArgs e)
+        {
+            var ordersForm = new ManagerOrdersForm();
+            ordersForm.Owner = this;
+            ordersForm.ShowDialog();
+        }
+
+        private void ClientsBtn_Click(object sender, System.EventArgs e)
+        {
+            var clientsForm = new ManagerClientsForm();
+            clientsForm.Owner = this;
+            clientsForm.ShowDialog();
         }
     }
 }

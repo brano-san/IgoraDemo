@@ -97,11 +97,23 @@
     <Compile Include="Forms\ClientHistory.Designer.cs">
       <DependentUpon>ClientHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManagerClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagerClientsForm.Designer.cs">
+      <DependentUpon>ManagerClientsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManagerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ManagerMainForm.Designer.cs">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagerOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagerOrdersForm.Designer.cs">
+      <DependentUpon>ManagerOrdersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ParentForm.cs">
       <SubType>Form</SubType>
@@ -158,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagerOrdersForm.resx">
+      <DependentUpon>ManagerOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ParentForm.resx">
       <DependentUpon>ParentForm.cs</DependentUpon>
