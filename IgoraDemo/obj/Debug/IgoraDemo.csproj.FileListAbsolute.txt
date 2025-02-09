@@ -35,3 +35,8 @@ D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.exe
 D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.pdb
 D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ParentForm.resources
 D:\IgoraDemo\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AuthForm.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AuthForm.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ParentForm.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AdminAddEditForm.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AdminMainForm.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ManagerMainForm.resources

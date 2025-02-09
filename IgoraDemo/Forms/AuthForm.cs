@@ -25,7 +25,24 @@ namespace IgoraDemo.Forms
             var user = Program.context.worker_.FirstOrDefault(worker_=> worker_.login == loginTB.Text);
             if (user == null)
             {
-                MessageBox.Show("Неверный логин!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                var client = Program.context.clients_.FirstOrDefault(c => c.email == loginTB.Text);
+                if (client == null)
+                {
+                    MessageBox.Show("Неверный логин!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (client.password != PasswordTB.Text)
+                {
+                    MessageBox.Show("Неверный пароль!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                this.Type = "client";
+                this.UserName = client.fio.ToString();
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
                 return;
             }
 

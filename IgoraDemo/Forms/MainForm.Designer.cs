@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.adminBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,6 +53,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.adminBtn);
             this.splitContainer1.Panel1.Controls.Add(this.authLabel);
             this.splitContainer1.Panel1.Controls.Add(this.authBtn);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -93,11 +95,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(157, 30);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(157, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 23);
+            this.label1.Size = new System.Drawing.Size(271, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Услуги нашей компании";
             // 
@@ -122,6 +124,22 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1045, 462);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // adminBtn
+            // 
+            this.adminBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.adminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.adminBtn.Enabled = false;
+            this.adminBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.adminBtn.Location = new System.Drawing.Point(816, 13);
+            this.adminBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.adminBtn.Name = "adminBtn";
+            this.adminBtn.Size = new System.Drawing.Size(216, 32);
+            this.adminBtn.TabIndex = 4;
+            this.adminBtn.Text = "Панель администратора";
+            this.adminBtn.UseVisualStyleBackColor = false;
+            this.adminBtn.Visible = false;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // MainForm
             // 
@@ -153,6 +171,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label authLabel;
+        private System.Windows.Forms.Button adminBtn;
     }
 }
 

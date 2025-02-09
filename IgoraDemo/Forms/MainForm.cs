@@ -32,19 +32,35 @@ namespace IgoraDemo
             {
                 switch (authForm.Type) 
                 {
-                    case "user":
-                        authLabel.Text = $"Вы авторизовались как пользователь: {authForm.UserName}";
+                    case "client":
+                        authLabel.Text = $"Вы авторизовались как клиент: {authForm.UserName}";
                     break;
                     case "manager":
                         authLabel.Text = $"Вы авторизовались как менеджер: {authForm.UserName}";
                         break;
                     case "admin":
                         authLabel.Text = $"Вы авторизовались как администратор: {authForm.UserName}";
+                        adminBtn.Visible = true;
+                        adminBtn.Enabled = true;
+                        var adminForm = new AdminMainForm();
+                        adminForm.Owner = this;
+                        this.Hide();
+                        adminForm.ShowDialog();
                         break;
                     default: break;
                 }
                 this.authLabel.Visible = true;
+                authBtn.Visible = false;
+                authBtn.Enabled = false;
             }
+        }
+
+        private void adminBtn_Click(object sender, System.EventArgs e)
+        {
+            var adminForm = new AdminMainForm();
+            adminForm.Owner = this;
+            this.Hide();
+            adminForm.ShowDialog();
         }
     }
 }
