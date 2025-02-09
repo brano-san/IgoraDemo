@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.adminBtn = new System.Windows.Forms.Button();
             this.authLabel = new System.Windows.Forms.Label();
             this.authBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.adminBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,15 +67,31 @@
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
             // 
+            // adminBtn
+            // 
+            this.adminBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.adminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.adminBtn.Enabled = false;
+            this.adminBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.adminBtn.Location = new System.Drawing.Point(816, 13);
+            this.adminBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.adminBtn.Name = "adminBtn";
+            this.adminBtn.Size = new System.Drawing.Size(216, 32);
+            this.adminBtn.TabIndex = 4;
+            this.adminBtn.Text = "Панель администратора";
+            this.adminBtn.UseVisualStyleBackColor = false;
+            this.adminBtn.Visible = false;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
+            // 
             // authLabel
             // 
             this.authLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.authLabel.AutoSize = true;
-            this.authLabel.Location = new System.Drawing.Point(696, 129);
+            this.authLabel.Location = new System.Drawing.Point(352, 129);
             this.authLabel.Name = "authLabel";
-            this.authLabel.Size = new System.Drawing.Size(46, 18);
+            this.authLabel.Size = new System.Drawing.Size(680, 18);
             this.authLabel.TabIndex = 3;
             this.authLabel.Text = "label2";
+            this.authLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.authLabel.Visible = false;
             // 
             // authBtn
@@ -124,22 +140,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1045, 462);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // adminBtn
-            // 
-            this.adminBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.adminBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.adminBtn.Enabled = false;
-            this.adminBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.adminBtn.Location = new System.Drawing.Point(816, 13);
-            this.adminBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.adminBtn.Name = "adminBtn";
-            this.adminBtn.Size = new System.Drawing.Size(216, 32);
-            this.adminBtn.TabIndex = 4;
-            this.adminBtn.Text = "Панель администратора";
-            this.adminBtn.UseVisualStyleBackColor = false;
-            this.adminBtn.Visible = false;
-            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // MainForm
             // 

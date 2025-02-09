@@ -112,6 +112,7 @@
     <Compile Include="Models\services_.cs" />
     <Compile Include="Models\statuses_.cs" />
     <Compile Include="Models\worker_.cs" />
+    <Compile Include="Services\DiscountCalculation.cs" />
     <EmbeddedResource Include="CustomControls\ProductControl.resx">
       <DependentUpon>ProductControl.cs</DependentUpon>
     </EmbeddedResource>

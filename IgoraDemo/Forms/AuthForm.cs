@@ -14,6 +14,7 @@ namespace IgoraDemo.Forms
     {
         public string Type;
         public string UserName;
+        public int Id;
 
         public AuthForm()
         {
@@ -40,6 +41,7 @@ namespace IgoraDemo.Forms
 
                 this.Type = "client";
                 this.UserName = client.fio.ToString();
+                this.Id = client.id_client;
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -55,6 +57,7 @@ namespace IgoraDemo.Forms
             var role = Program.context.posts_.FirstOrDefault(p => p.id_post == user.id_post);
             this.Type = role.post.ToString();
             this.UserName = user.fio.ToString();
+            this.Id = user.id_worker;
 
             this.DialogResult = DialogResult.OK;
             this.Close();

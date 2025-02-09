@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using IgoraDemo.CustomControls;
 using IgoraDemo.Forms;
+using IgoraDemo.Services;
 
 namespace IgoraDemo
 {
@@ -15,16 +16,17 @@ namespace IgoraDemo
             UpdateFlowPanel();
         }
 
-        private void UpdateFlowPanel()
+        private void UpdateFlowPanel(int disc = -1)
         {
+            flowLayoutPanel1.Controls.Clear();
             List<services_> services = Program.context.services_.OrderBy(s => s.service).ToList();
 
             foreach (services_ service in services) 
             {
-                flowLayoutPanel1.Controls.Add(new ProductControl(service));
+                flowLayoutPanel1.Controls.Add(new ProductControl(service, disc));
             }
         }
-
+        
         private void authBtn_Click(object sender, System.EventArgs e)
         {
             var authForm = new AuthForm();
@@ -34,6 +36,10 @@ namespace IgoraDemo
                 {
                     case "client":
                         authLabel.Text = $"Вы авторизовались как клиент: {authForm.UserName}";
+
+                        var count = Program.context.orders_.Where(o => o.id_client == authForm.Id).Sum(o => o.services_.cost) ?? 0;
+                        var discount = DiscountCalculation.calculateDiscount((int)count);
+                        UpdateFlowPanel(discount);
                     break;
                     case "manager":
                         authLabel.Text = $"Вы авторизовались как менеджер: {authForm.UserName}";
@@ -47,7 +53,6 @@ namespace IgoraDemo
                         this.Hide();
                         adminForm.ShowDialog();
                         break;
-                    default: break;
                 }
                 this.authLabel.Visible = true;
                 authBtn.Visible = false;

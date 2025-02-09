@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.discount = new System.Windows.Forms.Label();
             this.costDiscLabel = new System.Windows.Forms.Label();
             this.costLabel = new System.Windows.Forms.Label();
@@ -37,11 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,58 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(6, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 15);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Скидка:";
+            this.label7.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(147, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 15);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Цена со скидкой:";
+            this.label6.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(7, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Цена:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(7, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Артикул:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Наименование услуги:";
+            // 
             // discount
             // 
             this.discount.AutoSize = true;
@@ -73,6 +125,7 @@
             this.discount.Size = new System.Drawing.Size(36, 15);
             this.discount.TabIndex = 5;
             this.discount.Text = "label1";
+            this.discount.Visible = false;
             // 
             // costDiscLabel
             // 
@@ -83,6 +136,7 @@
             this.costDiscLabel.Size = new System.Drawing.Size(36, 15);
             this.costDiscLabel.TabIndex = 4;
             this.costDiscLabel.Text = "label1";
+            this.costDiscLabel.Visible = false;
             // 
             // costLabel
             // 
@@ -143,56 +197,6 @@
             this.label1.Size = new System.Drawing.Size(129, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Количество на складе:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(6, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Наименование услуги:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(7, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Артикул:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(7, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Цена:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(147, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 15);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Цена со скидкой:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(6, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 15);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Скидка:";
             // 
             // ProductControl
             // 
