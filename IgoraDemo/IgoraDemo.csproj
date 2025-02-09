@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\CartProductControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CartProductControl.Designer.cs">
+      <DependentUpon>CartProductControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ProductControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="Forms\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CartForm.Designer.cs">
+      <DependentUpon>CartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClientHistory.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,9 @@
     <Compile Include="Models\statuses_.cs" />
     <Compile Include="Models\worker_.cs" />
     <Compile Include="Services\DiscountCalculation.cs" />
+    <EmbeddedResource Include="CustomControls\CartProductControl.resx">
+      <DependentUpon>CartProductControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\ProductControl.resx">
       <DependentUpon>ProductControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CartForm.resx">
+      <DependentUpon>CartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientHistory.resx">
       <DependentUpon>ClientHistory.cs</DependentUpon>

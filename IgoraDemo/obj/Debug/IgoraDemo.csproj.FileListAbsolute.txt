@@ -41,3 +41,5 @@ C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AdminA
 C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.AdminMainForm.resources
 C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ManagerMainForm.resources
 C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ClientHistory.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.CustomControls.CartProductControl.resources
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.CartForm.resources

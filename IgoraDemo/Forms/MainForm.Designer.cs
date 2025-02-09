@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.HistoryBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.authLabel = new System.Windows.Forms.Label();
             this.authBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.HistoryBtn = new System.Windows.Forms.Button();
+            this.CartBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.CartBtn);
             this.splitContainer1.Panel1.Controls.Add(this.HistoryBtn);
             this.splitContainer1.Panel1.Controls.Add(this.adminBtn);
             this.splitContainer1.Panel1.Controls.Add(this.authLabel);
@@ -68,6 +70,22 @@
             this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // HistoryBtn
+            // 
+            this.HistoryBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.HistoryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.HistoryBtn.Enabled = false;
+            this.HistoryBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HistoryBtn.Location = new System.Drawing.Point(892, 54);
+            this.HistoryBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.HistoryBtn.Name = "HistoryBtn";
+            this.HistoryBtn.Size = new System.Drawing.Size(140, 32);
+            this.HistoryBtn.TabIndex = 5;
+            this.HistoryBtn.Text = "История";
+            this.HistoryBtn.UseVisualStyleBackColor = false;
+            this.HistoryBtn.Visible = false;
+            this.HistoryBtn.Click += new System.EventHandler(this.HistoryBtn_Click);
             // 
             // adminBtn
             // 
@@ -143,21 +161,21 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1045, 462);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // HistoryBtn
+            // CartBtn
             // 
-            this.HistoryBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.HistoryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.HistoryBtn.Enabled = false;
-            this.HistoryBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HistoryBtn.Location = new System.Drawing.Point(892, 54);
-            this.HistoryBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.HistoryBtn.Name = "HistoryBtn";
-            this.HistoryBtn.Size = new System.Drawing.Size(140, 32);
-            this.HistoryBtn.TabIndex = 5;
-            this.HistoryBtn.Text = "История";
-            this.HistoryBtn.UseVisualStyleBackColor = false;
-            this.HistoryBtn.Visible = false;
-            this.HistoryBtn.Click += new System.EventHandler(this.HistoryBtn_Click);
+            this.CartBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.CartBtn.Enabled = false;
+            this.CartBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CartBtn.Location = new System.Drawing.Point(744, 94);
+            this.CartBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.CartBtn.Name = "CartBtn";
+            this.CartBtn.Size = new System.Drawing.Size(140, 32);
+            this.CartBtn.TabIndex = 6;
+            this.CartBtn.Text = "Корзина";
+            this.CartBtn.UseVisualStyleBackColor = false;
+            this.CartBtn.Visible = false;
+            this.CartBtn.Click += new System.EventHandler(this.CartBtn_Click);
             // 
             // MainForm
             // 
@@ -191,6 +209,7 @@
         private System.Windows.Forms.Label authLabel;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.Button HistoryBtn;
+        private System.Windows.Forms.Button CartBtn;
     }
 }
 

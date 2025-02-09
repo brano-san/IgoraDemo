@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,10 +13,32 @@ namespace IgoraDemo
     {
         private int clientId = -1;
 
+        public static ObservableCollection<services_> cartOrders = new ObservableCollection<services_>();
+
         public MainForm()
         {
             InitializeComponent();
             UpdateFlowPanel();
+            cartOrders.CollectionChanged += onCollectionChanged;
+        }
+
+        private void onCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            CheckCollection();
+        }
+
+        public void CheckCollection()
+        {
+            if (cartOrders.Count > 0)
+            {
+                CartBtn.Visible = true;
+                CartBtn.Enabled = true;
+            }
+            else
+            {
+                CartBtn.Visible = false;
+                CartBtn.Enabled = false;
+            }
         }
 
         private void UpdateFlowPanel(int disc = -1)
@@ -84,8 +107,18 @@ namespace IgoraDemo
 
             var historyForm = new ClientHistory(client);
             historyForm.Owner = this;
-            this.Hide();
             historyForm.ShowDialog();
+        }
+
+        private void CartBtn_Click(object sender, System.EventArgs e)
+        {
+            var count = Program.context.orders_.Where(o => o.id_client == this.clientId).Sum(o => o.services_.cost) ?? 0;
+            var discount = DiscountCalculation.calculateDiscount((int)count);
+
+            var cartForm = new CartForm(clientId, discount);
+            cartForm.Owner = this;
+            cartForm.ShowDialog();
+            CheckCollection();
         }
     }
 }
