@@ -5,12 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IgoraDemo.Forms
 {
-    public partial class AdminAddEditForm : Form
+    public partial class AdminAddEditForm : ParentForm
     {
         private services_ service;
 
@@ -57,8 +58,44 @@ namespace IgoraDemo.Forms
             }
         }
 
+        private bool ValidateData()
+        {
+            string fio = serviceTextBox.Text;
+            if (string.IsNullOrEmpty(fio) || !Regex.IsMatch(fio, @"^[А-ЯЁЙа-яёйA-Za-z0-9][а-яёйa-z0-9\s]+$"))
+            {
+                MessageBox.Show("Название услуги требует более двух символов", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            string code = code_serviceTextBox.Text;
+            if (string.IsNullOrEmpty(code) || !Regex.IsMatch(code, @"^[A-Za-z0-9][A-Za-z0-9]+$"))
+            {
+                MessageBox.Show("Артикул услуги требует более двух символов. Только латинские буквы и цифры!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            string cost = costTextBox.Text;
+            if (string.IsNullOrEmpty(cost) || !Regex.IsMatch(cost, @"^[0-9]+$"))
+            {
+                MessageBox.Show("Стоимость может состоять только из цифр!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
         private void addEditBtn_Click(object sender, EventArgs e)
         {
+            if (!ValidateData())
+            {
+                return;
+            }
+
+            var res = MessageBox.Show("Вы уверены что хотите сохранить изменения?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res == DialogResult.No)
+            {
+                return;
+            }
+
             if (this.Text == "Редактирование услуги")
             {
                 service.service = serviceTextBox.Text;
@@ -70,23 +107,19 @@ namespace IgoraDemo.Forms
                 this.Close();
                 return;
             }
-
-            var res = MessageBox.Show("Вы уверены что хотите сохранить изменения?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (res == DialogResult.Yes)
+            
+            var addService = new services_
             {
-                var addService = new services_
-                {
-                    service = serviceTextBox.Text,
-                    code_service = code_serviceTextBox.Text,
-                    cost = Convert.ToDouble(costTextBox.Text)
-                };
+                service = serviceTextBox.Text,
+                code_service = code_serviceTextBox.Text,
+                cost = Convert.ToDouble(costTextBox.Text)
+            };
 
-                Program.context.services_.Add(addService);
-                Program.context.SaveChanges();
+            Program.context.services_.Add(addService);
+            Program.context.SaveChanges();
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
