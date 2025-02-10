@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IgoraDemo.Services
+﻿namespace DiscountCalculationLibrary
 {
-    internal class DiscountCalculation
+    public class DiscountCalculation
     {
         public static int calculateDiscount(int sum)
         {

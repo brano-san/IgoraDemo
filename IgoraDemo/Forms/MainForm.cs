@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using IgoraDemo.CustomControls;
 using IgoraDemo.Forms;
-using IgoraDemo.Services;
+using DiscountCalculationLibrary;
 
 namespace IgoraDemo
 {

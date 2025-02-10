@@ -143,7 +143,6 @@
     <Compile Include="Models\services_.cs" />
     <Compile Include="Models\statuses_.cs" />
     <Compile Include="Models\worker_.cs" />
-    <Compile Include="Services\DiscountCalculation.cs" />
     <EmbeddedResource Include="CustomControls\CartProductControl.resx">
       <DependentUpon>CartProductControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +222,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DiscountCalculationLibrary\DiscountCalculationLibrary.csproj">
+      <Project>{d54b8b14-4130-41fa-8164-4618a33c7c61}</Project>
+      <Name>DiscountCalculationLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
