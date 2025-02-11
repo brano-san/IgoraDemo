@@ -245,9 +245,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(162, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 18);
+            this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Сортировка по цене";
+            this.label3.Text = "Сортировка";
             // 
             // flowLayoutPanel1
             // 

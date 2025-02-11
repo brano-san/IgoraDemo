@@ -9,6 +9,7 @@ namespace IgoraDemo.Forms
         public AdminMainForm()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -48,12 +49,36 @@ namespace IgoraDemo.Forms
                 Program.context.services_.Remove(service);
                 Program.context.SaveChanges();
             }
-            this.services_TableAdapter.Fill(this.igoraDataSet._services_);
+
+            UpdateData();
+        }
+
+        private void UpdateData()
+        {
+            var services = Program.context.services_.Where(s => s.service.Contains(textBox1.Text)).ToList();
+            if (comboBox1.SelectedIndex != null)
+            {
+                if (comboBox1.SelectedIndex == 0)
+                {
+                    services = services.OrderBy(s => s.service).ToList();
+                }
+                else if (comboBox1.SelectedIndex == 1)
+                {
+                    services = services.OrderBy(s => s.cost).ToList();
+                }
+                else
+                {
+                    services = services.OrderByDescending(s => s.cost).ToList();
+                }
+            }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = services;
         }
 
         private void AdminMainForm_Load(object sender, EventArgs e)
         {
-            this.services_TableAdapter.Fill(this.igoraDataSet._services_);
+            UpdateData();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -61,7 +86,7 @@ namespace IgoraDemo.Forms
             var addForm = new AdminAddEditForm();
             addForm.ShowDialog();
 
-            this.services_TableAdapter.Fill(this.igoraDataSet._services_);
+            UpdateData();
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -91,12 +116,22 @@ namespace IgoraDemo.Forms
             var addForm = new AdminAddEditForm(service);
             addForm.ShowDialog();
 
-            this.services_TableAdapter.Fill(this.igoraDataSet._services_);
+            UpdateData();
         }
 
         private void AdminMainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Owner.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            UpdateData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateData();
         }
     }
 }

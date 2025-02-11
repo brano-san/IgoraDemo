@@ -18,11 +18,19 @@ namespace IgoraDemo.Forms
         public ManagerAddClientForm()
         {
             InitializeComponent();
+            this.Text = "Добавить клиента";
+            label1.Text = "Добавить клиента";
         }
 
         public ManagerAddClientForm(clients_ client)
         {
             InitializeComponent();
+
+            this.Text = "Редактировать клиента " + client.fio;
+            label1.Text = "Редактировать клиента " + client.fio;
+            label2.Visible = true;
+            label2.Text = client.fio;
+
             IsEdit = true;
             Client = client;
 

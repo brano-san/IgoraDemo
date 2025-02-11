@@ -61,6 +61,7 @@
             this.orders_TableAdapter = new IgoraDemo.Models.IgoraDataSetTableAdapters.orders_TableAdapter();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new IgoraDemo.Models.IgoraDataSetTableAdapters.TableAdapterManager();
+            this.label2 = new System.Windows.Forms.Label();
             fioLabel = new System.Windows.Forms.Label();
             codeLabel = new System.Windows.Forms.Label();
             pasportLabel = new System.Windows.Forms.Label();
@@ -237,6 +238,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.BackBtn);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
@@ -279,7 +281,7 @@
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
             this.AddBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddBtn.Location = new System.Drawing.Point(118, 294);
+            this.AddBtn.Location = new System.Drawing.Point(118, 292);
             this.AddBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(140, 32);
@@ -365,6 +367,18 @@
             this.tableAdapterManager.UpdateOrder = IgoraDemo.Models.IgoraDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.worker_TableAdapter = null;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(133, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 19);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "1";
+            this.label2.Visible = false;
+            // 
             // ManagerAddClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -418,5 +432,6 @@
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private Models.IgoraDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.MaskedTextBox pasportTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }
