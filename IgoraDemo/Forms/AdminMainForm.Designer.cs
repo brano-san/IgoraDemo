@@ -160,7 +160,7 @@
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(196, 32);
             this.delBtn.TabIndex = 7;
-            this.delBtn.Text = "Удалить строку";
+            this.delBtn.Text = "Удалить услугу";
             this.delBtn.UseVisualStyleBackColor = false;
             this.delBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
