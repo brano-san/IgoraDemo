@@ -109,6 +109,12 @@
     <Compile Include="Forms\ManagerClientsForm.Designer.cs">
       <DependentUpon>ManagerClientsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManagerEditOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagerEditOrderForm.Designer.cs">
+      <DependentUpon>ManagerEditOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ManagerOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     <EmbeddedResource Include="Forms\ManagerClientsForm.resx">
       <DependentUpon>ManagerClientsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagerEditOrderForm.resx">
+      <DependentUpon>ManagerEditOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManagerOrdersForm.resx">
       <DependentUpon>ManagerOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +237,9 @@
       <Project>{d54b8b14-4130-41fa-8164-4618a33c7c61}</Project>
       <Name>DiscountCalculationLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Добавить1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

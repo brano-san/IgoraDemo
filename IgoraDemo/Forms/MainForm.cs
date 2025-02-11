@@ -42,8 +42,15 @@ namespace IgoraDemo
             }
         }
 
-        private void UpdateFlowPanel(int disc = -1)
+        private void UpdateFlowPanel()
         {
+            int discount = 0;
+            if (clientId != -1)
+            {
+                var count = Program.context.orders_.Where(o => o.id_client == clientId).Sum(o => o.services_.cost) ?? 0;
+                discount = DiscountCalculation.calculateDiscount((int)count);
+            }
+
             flowLayoutPanel1.Controls.Clear();
             List<services_> services = Program.context.services_.Where(s => s.service.Contains(textBox1.Text)).ToList();
 
@@ -65,7 +72,7 @@ namespace IgoraDemo
 
             foreach (services_ service in services) 
             {
-                flowLayoutPanel1.Controls.Add(new ProductControl(service, disc));
+                flowLayoutPanel1.Controls.Add(new ProductControl(service, discount));
             }
         }
         
@@ -78,13 +85,12 @@ namespace IgoraDemo
                 {
                     case "client":
                         authLabel.Text = $"Вы авторизовались как клиент: {authForm.UserName}";
-
-                        var count = Program.context.orders_.Where(o => o.id_client == authForm.Id).Sum(o => o.services_.cost) ?? 0;
-                        var discount = DiscountCalculation.calculateDiscount((int)count);
-                        UpdateFlowPanel(discount);
+                        clientId = authForm.Id;
+                        
+                        UpdateFlowPanel();
                         HistoryBtn.Visible = true;
                         HistoryBtn.Enabled = true;
-                        clientId = authForm.Id;
+                        
                     break;
                     case "manager":
                         authLabel.Text = $"Вы авторизовались как менеджер: {authForm.UserName}";
@@ -133,13 +139,14 @@ namespace IgoraDemo
 
         private void CartBtn_Click(object sender, System.EventArgs e)
         {
-            var count = Program.context.orders_.Where(o => o.id_client == this.clientId).Sum(o => o.services_.cost) ?? 0;
+            var count = Program.context.orders_.Where(o => o.id_client == clientId).Sum(o => o.services_.cost) ?? 0;
             var discount = DiscountCalculation.calculateDiscount((int)count);
 
             var cartForm = new CartForm(clientId, discount);
             cartForm.Owner = this;
             cartForm.ShowDialog();
             CheckCollection();
+            UpdateFlowPanel();
         }
 
         private void OrdersBtn_Click(object sender, System.EventArgs e)

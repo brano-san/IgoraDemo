@@ -62,5 +62,10 @@ namespace IgoraDemo.Forms
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void showBtn_Click(object sender, EventArgs e)
+        {
+            PasswordTB.UseSystemPasswordChar = !PasswordTB.UseSystemPasswordChar;
+        }
     }
 }

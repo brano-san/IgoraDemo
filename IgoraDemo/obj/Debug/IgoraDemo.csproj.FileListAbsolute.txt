@@ -75,3 +75,6 @@ C:\Users\975-21\Desktop\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.csproj.CoreCompi
 C:\Users\975-21\Desktop\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.csproj.CopyComplete
 C:\Users\975-21\Desktop\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.exe
 C:\Users\975-21\Desktop\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.pdb
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\DiscountCalculationLibrary.dll
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\bin\Debug\DiscountCalculationLibrary.pdb
+C:\Users\brano\source\repos\IgoraDemo\IgoraDemo\obj\Debug\IgoraDemo.Forms.ManagerEditOrderForm.resources

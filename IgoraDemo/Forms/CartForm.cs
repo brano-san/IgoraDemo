@@ -36,6 +36,8 @@ namespace IgoraDemo.Forms
         {
             var count = cartOrders.Sum(s => s.cost);
             InfoLabel.Text = "Общая скидка - " + this.disc + "; Общая сумма корзины - " + (int)count + ";";
+            label2.Text = "Общая сумма корзины со скидкой - " + Convert.ToString(count - (count * disc / 100)) + ";";
+
 
             flowLayoutPanel1.Controls.Clear();
             List<services_> services = MainForm.cartOrders.OrderBy(s => s.service).ToList();

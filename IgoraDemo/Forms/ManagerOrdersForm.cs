@@ -91,7 +91,7 @@ namespace IgoraDemo.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Статус заказа \"Завершен\". Изменить нельзя", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Статус заказа \"Закрыт\". Изменить нельзя", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 Program.context.SaveChanges();
@@ -106,7 +106,7 @@ namespace IgoraDemo.Forms
             UpdateData();
         }
 
-        private void reitBtn_Click(object sender, EventArgs e)
+        private void editBtn_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count <= 0)
             {
@@ -123,7 +123,11 @@ namespace IgoraDemo.Forms
 
             var id = (int)selectedRow.Cells["orderNumber"].Value;
 
-            var editOrders = Program.context.orders_.Where(o => o.order_number == id).ToList();
+            var ordersEditForm = new ManagerEditOrderForm(id);
+            ordersEditForm.Owner = this;
+            ordersEditForm.ShowDialog();
+
+            UpdateData();
         }
     }
 }

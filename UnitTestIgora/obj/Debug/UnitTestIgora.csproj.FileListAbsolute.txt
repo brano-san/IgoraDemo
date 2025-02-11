@@ -19,3 +19,5 @@ C:\Users\brano\source\repos\IgoraDemo\UnitTestIgora\obj\Debug\UnitTestIgora.cspr
 C:\Users\brano\source\repos\IgoraDemo\UnitTestIgora\obj\Debug\UnitTest.D74D3F2B.Up2Date
 C:\Users\brano\source\repos\IgoraDemo\UnitTestIgora\obj\Debug\UnitTestIgora.dll
 C:\Users\brano\source\repos\IgoraDemo\UnitTestIgora\obj\Debug\UnitTestIgora.pdb
+C:\Users\brano\source\repos\IgoraDemo\UnitTestIgora\bin\Debug\DiscountCalculationLibrary.dll
+C:\Users\brano\source\repos\IgoraDemo\UnitTestIgora\bin\Debug\DiscountCalculationLibrary.pdb

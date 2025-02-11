@@ -7,7 +7,7 @@ using IgoraDemo.Models;
 
 namespace IgoraDemo.Forms
 {
-    public partial class ClientHistory : Form
+    public partial class ClientHistory : ParentForm
     {
         private clients_ client;
 
@@ -81,9 +81,20 @@ namespace IgoraDemo.Forms
 
             var order_number = (int)selService.Cells[0].Value;
             var orders = Program.context.orders_.Where(o => o.order_number == order_number).ToList();
+
             foreach (var o in orders)
             {
-                o.status_id = 3;
+                if (o.status_id == 3)
+                {
+                    MessageBox.Show("Заказ уже завершён!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (o.status_id == 2)
+                {
+                    MessageBox.Show("За заказ уже внесены деньги. Отменить нельзя!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                o.status_id = 4;
                 Program.context.SaveChanges();
             }
             UpdateData();

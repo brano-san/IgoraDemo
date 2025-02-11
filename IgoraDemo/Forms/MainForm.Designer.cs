@@ -151,7 +151,7 @@
             this.CartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
             this.CartBtn.Enabled = false;
             this.CartBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CartBtn.Location = new System.Drawing.Point(744, 88);
+            this.CartBtn.Location = new System.Drawing.Point(744, 94);
             this.CartBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CartBtn.Name = "CartBtn";
             this.CartBtn.Size = new System.Drawing.Size(140, 32);

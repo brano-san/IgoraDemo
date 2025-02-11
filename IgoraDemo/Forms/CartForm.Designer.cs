@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,6 +53,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.OrderCart);
             this.splitContainer1.Panel1.Controls.Add(this.InfoLabel);
             this.splitContainer1.Panel1.Controls.Add(this.BackBtn);
@@ -82,6 +84,7 @@
             // 
             // InfoLabel
             // 
+            this.InfoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.InfoLabel.Location = new System.Drawing.Point(482, 18);
             this.InfoLabel.Name = "InfoLabel";
             this.InfoLabel.Size = new System.Drawing.Size(407, 30);
@@ -136,6 +139,16 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(903, 459);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Location = new System.Drawing.Point(482, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(407, 30);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // CartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label InfoLabel;
         private System.Windows.Forms.Button OrderCart;
+        private System.Windows.Forms.Label label2;
     }
 }
