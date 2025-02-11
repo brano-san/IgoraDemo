@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using IgoraDemo.Models;
 
@@ -27,15 +23,22 @@ namespace IgoraDemo.Forms
 
         private void ClientHistory_Load(object sender, EventArgs e)
         {
+            UpdateData();
+        }
+
+        private void UpdateData()
+        {
+            ordersRows.Clear();
             var orders = Program.context.orders_.Where(o => o.id_client == client.id_client)
                 .GroupBy(or => or.order_number).ToList();
-
-            OrdersRow ordersRow = new OrdersRow();
+           
             foreach (var o in orders)
             {
+                OrdersRow ordersRow = new OrdersRow();
                 var statusId = o.First().status_id;
                 var status = Program.context.statuses_.FirstOrDefault(s => s.id_status == statusId);
 
+                ordersRow.OrderNumber = o.First().order_number;
                 ordersRow.Fio = client.fio;
                 ordersRow.Date = o.First().order_time;
                 ordersRow.Sum = o.Sum(order => order.services_.cost);
@@ -45,7 +48,9 @@ namespace IgoraDemo.Forms
                 ordersRows.Add(ordersRow);
             }
 
+            dataGridView1.DataSource = null;
             dataGridView1.DataSource = ordersRows;
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -57,6 +62,32 @@ namespace IgoraDemo.Forms
         private void ClientHistory_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Owner.Show();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Необходимо выбрать заказ для отмены", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selService = dataGridView1.SelectedRows[0];
+            if (selService == null)
+            {
+                MessageBox.Show("Необходимо выбрать заказ для отмены", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var order_number = (int)selService.Cells[0].Value;
+            var orders = Program.context.orders_.Where(o => o.order_number == order_number).ToList();
+            foreach (var o in orders)
+            {
+                o.status_id = 3;
+                Program.context.SaveChanges();
+            }
+            UpdateData();
+            MessageBox.Show("Заказ был отменен!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

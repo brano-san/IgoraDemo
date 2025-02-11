@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.OrderCart = new System.Windows.Forms.Button();
+            this.InfoLabel = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.InfoLabel = new System.Windows.Forms.Label();
-            this.OrderCart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -65,6 +65,29 @@
             this.splitContainer1.SplitterDistance = 155;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // OrderCart
+            // 
+            this.OrderCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OrderCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.OrderCart.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrderCart.Location = new System.Drawing.Point(569, 106);
+            this.OrderCart.Margin = new System.Windows.Forms.Padding(4);
+            this.OrderCart.Name = "OrderCart";
+            this.OrderCart.Size = new System.Drawing.Size(173, 32);
+            this.OrderCart.TabIndex = 7;
+            this.OrderCart.Text = "Оформить заказ";
+            this.OrderCart.UseVisualStyleBackColor = false;
+            this.OrderCart.Click += new System.EventHandler(this.OrderCart_Click);
+            // 
+            // InfoLabel
+            // 
+            this.InfoLabel.Location = new System.Drawing.Point(482, 18);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(407, 30);
+            this.InfoLabel.TabIndex = 6;
+            this.InfoLabel.Text = "label2";
+            this.InfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BackBtn
             // 
@@ -113,35 +136,13 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(903, 459);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // InfoLabel
-            // 
-            this.InfoLabel.Location = new System.Drawing.Point(482, 18);
-            this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(407, 30);
-            this.InfoLabel.TabIndex = 6;
-            this.InfoLabel.Text = "label2";
-            this.InfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // OrderCart
-            // 
-            this.OrderCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OrderCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.OrderCart.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OrderCart.Location = new System.Drawing.Point(569, 106);
-            this.OrderCart.Margin = new System.Windows.Forms.Padding(4);
-            this.OrderCart.Name = "OrderCart";
-            this.OrderCart.Size = new System.Drawing.Size(173, 32);
-            this.OrderCart.TabIndex = 7;
-            this.OrderCart.Text = "Оформить заказ";
-            this.OrderCart.UseVisualStyleBackColor = false;
-            this.OrderCart.Click += new System.EventHandler(this.OrderCart_Click);
-            // 
             // CartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 620);
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(919, 659);
             this.Name = "CartForm";
             this.Text = "Корзина";
             this.splitContainer1.Panel1.ResumeLayout(false);

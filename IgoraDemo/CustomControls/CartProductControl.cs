@@ -20,6 +20,7 @@ namespace IgoraDemo.CustomControls
             nameLabel.Text = service.service.ToString();
             descLabel.Text = service.code_service.ToString();
             costLabel.Text = service.cost.ToString();
+            label2.Text = service.available;
 
             if (disc >= 0)
             {

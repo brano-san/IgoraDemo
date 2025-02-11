@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ClientsBtn = new System.Windows.Forms.Button();
+            this.OrdersBtn = new System.Windows.Forms.Button();
             this.CartBtn = new System.Windows.Forms.Button();
             this.HistoryBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
@@ -37,9 +42,8 @@
             this.authBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.OrdersBtn = new System.Windows.Forms.Button();
-            this.ClientsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,6 +61,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.ClientsBtn);
             this.splitContainer1.Panel1.Controls.Add(this.OrdersBtn);
             this.splitContainer1.Panel1.Controls.Add(this.CartBtn);
@@ -66,6 +73,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.authBtn);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
             // 
             // splitContainer1.Panel2
             // 
@@ -75,13 +83,75 @@
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "По названию",
+            "По возрастанию цены",
+            "По убыванию цены"});
+            this.comboBox1.Location = new System.Drawing.Point(163, 116);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(265, 26);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(162, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Поиск";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(162, 71);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(266, 26);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // ClientsBtn
+            // 
+            this.ClientsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClientsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.ClientsBtn.Enabled = false;
+            this.ClientsBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ClientsBtn.Location = new System.Drawing.Point(465, 52);
+            this.ClientsBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.ClientsBtn.Name = "ClientsBtn";
+            this.ClientsBtn.Size = new System.Drawing.Size(187, 32);
+            this.ClientsBtn.TabIndex = 8;
+            this.ClientsBtn.Text = "Клиенты";
+            this.ClientsBtn.UseVisualStyleBackColor = false;
+            this.ClientsBtn.Visible = false;
+            this.ClientsBtn.Click += new System.EventHandler(this.ClientsBtn_Click);
+            // 
+            // OrdersBtn
+            // 
+            this.OrdersBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OrdersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.OrdersBtn.Enabled = false;
+            this.OrdersBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OrdersBtn.Location = new System.Drawing.Point(465, 12);
+            this.OrdersBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.OrdersBtn.Name = "OrdersBtn";
+            this.OrdersBtn.Size = new System.Drawing.Size(187, 32);
+            this.OrdersBtn.TabIndex = 7;
+            this.OrdersBtn.Text = "Заказы";
+            this.OrdersBtn.UseVisualStyleBackColor = false;
+            this.OrdersBtn.Visible = false;
+            this.OrdersBtn.Click += new System.EventHandler(this.OrdersBtn_Click);
+            // 
             // CartBtn
             // 
             this.CartBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
             this.CartBtn.Enabled = false;
             this.CartBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CartBtn.Location = new System.Drawing.Point(744, 94);
+            this.CartBtn.Location = new System.Drawing.Point(744, 88);
             this.CartBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CartBtn.Name = "CartBtn";
             this.CartBtn.Size = new System.Drawing.Size(140, 32);
@@ -126,9 +196,9 @@
             // authLabel
             // 
             this.authLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.authLabel.Location = new System.Drawing.Point(352, 129);
+            this.authLabel.Location = new System.Drawing.Point(434, 129);
             this.authLabel.Name = "authLabel";
-            this.authLabel.Size = new System.Drawing.Size(680, 18);
+            this.authLabel.Size = new System.Drawing.Size(598, 18);
             this.authLabel.TabIndex = 3;
             this.authLabel.Text = "label2";
             this.authLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,6 +240,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(162, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 18);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Сортировка по цене";
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
@@ -180,38 +259,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1045, 462);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // OrdersBtn
-            // 
-            this.OrdersBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OrdersBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.OrdersBtn.Enabled = false;
-            this.OrdersBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OrdersBtn.Location = new System.Drawing.Point(465, 18);
-            this.OrdersBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.OrdersBtn.Name = "OrdersBtn";
-            this.OrdersBtn.Size = new System.Drawing.Size(187, 32);
-            this.OrdersBtn.TabIndex = 7;
-            this.OrdersBtn.Text = "Заказы";
-            this.OrdersBtn.UseVisualStyleBackColor = false;
-            this.OrdersBtn.Visible = false;
-            this.OrdersBtn.Click += new System.EventHandler(this.OrdersBtn_Click);
-            // 
-            // ClientsBtn
-            // 
-            this.ClientsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClientsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.ClientsBtn.Enabled = false;
-            this.ClientsBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ClientsBtn.Location = new System.Drawing.Point(465, 58);
-            this.ClientsBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.ClientsBtn.Name = "ClientsBtn";
-            this.ClientsBtn.Size = new System.Drawing.Size(187, 32);
-            this.ClientsBtn.TabIndex = 8;
-            this.ClientsBtn.Text = "Клиенты";
-            this.ClientsBtn.UseVisualStyleBackColor = false;
-            this.ClientsBtn.Visible = false;
-            this.ClientsBtn.Click += new System.EventHandler(this.ClientsBtn_Click);
             // 
             // MainForm
             // 
@@ -224,6 +271,7 @@
             this.MinimumSize = new System.Drawing.Size(1061, 663);
             this.Name = "MainForm";
             this.Text = "Услуги";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -248,6 +296,10 @@
         private System.Windows.Forms.Button CartBtn;
         private System.Windows.Forms.Button ClientsBtn;
         private System.Windows.Forms.Button OrdersBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 

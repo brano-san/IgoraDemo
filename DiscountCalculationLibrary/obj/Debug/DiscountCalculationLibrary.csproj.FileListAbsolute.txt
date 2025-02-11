@@ -4,3 +4,9 @@ C:\Users\brano\source\repos\IgoraDemo\DiscountCalculationLibrary\obj\Debug\Disco
 C:\Users\brano\source\repos\IgoraDemo\DiscountCalculationLibrary\obj\Debug\DiscountCalculationLibrary.csproj.CoreCompileInputs.cache
 C:\Users\brano\source\repos\IgoraDemo\DiscountCalculationLibrary\obj\Debug\DiscountCalculationLibrary.dll
 C:\Users\brano\source\repos\IgoraDemo\DiscountCalculationLibrary\obj\Debug\DiscountCalculationLibrary.pdb
+C:\Users\975-21\Desktop\IgoraDemo\DiscountCalculationLibrary\bin\Debug\DiscountCalculationLibrary.dll
+C:\Users\975-21\Desktop\IgoraDemo\DiscountCalculationLibrary\bin\Debug\DiscountCalculationLibrary.pdb
+C:\Users\975-21\Desktop\IgoraDemo\DiscountCalculationLibrary\obj\Debug\DiscountCalculationLibrary.csproj.AssemblyReference.cache
+C:\Users\975-21\Desktop\IgoraDemo\DiscountCalculationLibrary\obj\Debug\DiscountCalculationLibrary.csproj.CoreCompileInputs.cache
+C:\Users\975-21\Desktop\IgoraDemo\DiscountCalculationLibrary\obj\Debug\DiscountCalculationLibrary.dll
+C:\Users\975-21\Desktop\IgoraDemo\DiscountCalculationLibrary\obj\Debug\DiscountCalculationLibrary.pdb

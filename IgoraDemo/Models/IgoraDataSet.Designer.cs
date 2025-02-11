@@ -1871,6 +1871,8 @@ namespace IgoraDemo.Models {
             
             private global::System.Data.DataColumn columncost;
             
+            private global::System.Data.DataColumn columnavailable;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public _services_DataTable() {
@@ -1938,6 +1940,14 @@ namespace IgoraDemo.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn availableColumn {
+                get {
+                    return this.columnavailable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1973,13 +1983,14 @@ namespace IgoraDemo.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public _services_Row Add_services_Row(string service, string code_service, double cost) {
+            public _services_Row Add_services_Row(string service, string code_service, double cost, string available) {
                 _services_Row row_services_Row = ((_services_Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         service,
                         code_service,
-                        cost};
+                        cost,
+                        available};
                 row_services_Row.ItemArray = columnValuesArray;
                 this.Rows.Add(row_services_Row);
                 return row_services_Row;
@@ -2013,6 +2024,7 @@ namespace IgoraDemo.Models {
                 this.columnservice = base.Columns["service"];
                 this.columncode_service = base.Columns["code_service"];
                 this.columncost = base.Columns["cost"];
+                this.columnavailable = base.Columns["available"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2026,6 +2038,8 @@ namespace IgoraDemo.Models {
                 base.Columns.Add(this.columncode_service);
                 this.columncost = new global::System.Data.DataColumn("cost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncost);
+                this.columnavailable = new global::System.Data.DataColumn("available", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnavailable);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_service}, true));
                 this.columnid_service.AutoIncrement = true;
@@ -2036,6 +2050,7 @@ namespace IgoraDemo.Models {
                 this.columnid_service.Unique = true;
                 this.columnservice.MaxLength = 255;
                 this.columncode_service.MaxLength = 255;
+                this.columnavailable.MaxLength = 255;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_tableservices_");
                 this.ExtendedProperties.Add("Generator_UserTableName", "services$");
             }
@@ -3578,6 +3593,22 @@ namespace IgoraDemo.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string available {
+                get {
+                    try {
+                        return ((string)(this[this._tableservices_.availableColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'available\' в таблице \'services$\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._tableservices_.availableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsserviceNull() {
                 return this.IsNull(this._tableservices_.serviceColumn);
             }
@@ -3610,6 +3641,18 @@ namespace IgoraDemo.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetcostNull() {
                 this[this._tableservices_.costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsavailableNull() {
+                return this.IsNull(this._tableservices_.availableColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetavailableNull() {
+                this[this._tableservices_.availableColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6165,10 +6208,11 @@ SELECT id_order, order_number, code, create_time, order_time, id_client, id_serv
             tableMapping.ColumnMappings.Add("service", "service");
             tableMapping.ColumnMappings.Add("code_service", "code_service");
             tableMapping.ColumnMappings.Add("cost", "cost");
+            tableMapping.ColumnMappings.Add("available", "available");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[services$] WHERE (([id_service] = @Original_id_service) AND ((@IsNull_service = 1 AND [service] IS NULL) OR ([service] = @Original_service)) AND ((@IsNull_code_service = 1 AND [code_service] IS NULL) OR ([code_service] = @Original_code_service)) AND ((@IsNull_cost = 1 AND [cost] IS NULL) OR ([cost] = @Original_cost)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [services$] WHERE (([id_service] = @Original_id_service) AND ((@IsNull_service = 1 AND [service] IS NULL) OR ([service] = @Original_service)) AND ((@IsNull_code_service = 1 AND [code_service] IS NULL) OR ([code_service] = @Original_code_service)) AND ((@IsNull_cost = 1 AND [cost] IS NULL) OR ([cost] = @Original_cost)) AND ((@IsNull_available = 1 AND [available] IS NULL) OR ([available] = @Original_available)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_service", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_service", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_service", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -6177,23 +6221,27 @@ SELECT id_order, order_number, code, create_time, order_time, id_client, id_serv
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_code_service", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code_service", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_available", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "available", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_available", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "available", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[services$] ([service], [code_service], [cost]) VALUES (@servic" +
-                "e, @code_service, @cost);\r\nSELECT id_service, service, code_service, cost FROM s" +
-                "ervices$ WHERE (id_service = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [services$] ([service], [code_service], [cost], [available]) VALUES (" +
+                "@service, @code_service, @cost, @available);\r\nSELECT id_service, service, code_s" +
+                "ervice, cost, available FROM services$ WHERE (id_service = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@service", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code_service", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code_service", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@available", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "available", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[services$] SET [service] = @service, [code_service] = @code_service, [cost] = @cost WHERE (([id_service] = @Original_id_service) AND ((@IsNull_service = 1 AND [service] IS NULL) OR ([service] = @Original_service)) AND ((@IsNull_code_service = 1 AND [code_service] IS NULL) OR ([code_service] = @Original_code_service)) AND ((@IsNull_cost = 1 AND [cost] IS NULL) OR ([cost] = @Original_cost)));
-SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service = @id_service)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [services$] SET [service] = @service, [code_service] = @code_service, [cost] = @cost, [available] = @available WHERE (([id_service] = @Original_id_service) AND ((@IsNull_service = 1 AND [service] IS NULL) OR ([service] = @Original_service)) AND ((@IsNull_code_service = 1 AND [code_service] IS NULL) OR ([code_service] = @Original_code_service)) AND ((@IsNull_cost = 1 AND [cost] IS NULL) OR ([cost] = @Original_cost)) AND ((@IsNull_available = 1 AND [available] IS NULL) OR ([available] = @Original_available)));
+SELECT id_service, service, code_service, cost, available FROM services$ WHERE (id_service = @id_service)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@service", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code_service", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code_service", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@available", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "available", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_service", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_service", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_service", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_service", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "service", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6201,6 +6249,8 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_code_service", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "code_service", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cost", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_available", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "available", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_available", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "available", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_service", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_service", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -6217,7 +6267,7 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_service, service, code_service, cost FROM dbo.services$";
+            this._commandCollection[0].CommandText = "SELECT id_service, service, code_service, cost, available FROM services$";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6278,7 +6328,7 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_service, string Original_service, string Original_code_service, global::System.Nullable<double> Original_cost) {
+        public virtual int Delete(int Original_id_service, string Original_service, string Original_code_service, global::System.Nullable<double> Original_cost, string Original_available) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_service));
             if ((Original_service == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -6304,6 +6354,14 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Original_available == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_available));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6324,7 +6382,7 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string service, string code_service, global::System.Nullable<double> cost) {
+        public virtual int Insert(string service, string code_service, global::System.Nullable<double> cost, string available) {
             if ((service == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -6342,6 +6400,12 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((available == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(available));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6363,7 +6427,7 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string service, string code_service, global::System.Nullable<double> cost, int Original_id_service, string Original_service, string Original_code_service, global::System.Nullable<double> Original_cost, int id_service) {
+        public virtual int Update(string service, string code_service, global::System.Nullable<double> cost, string available, int Original_id_service, string Original_service, string Original_code_service, global::System.Nullable<double> Original_cost, string Original_available, int id_service) {
             if ((service == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -6382,32 +6446,46 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id_service));
-            if ((Original_service == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((available == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_service));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(available));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id_service));
+            if ((Original_service == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_service));
             }
             if ((Original_code_service == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_code_service));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_code_service));
             }
             if ((Original_cost.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Original_cost.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_cost.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(id_service));
+            if ((Original_available == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_available));
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id_service));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6428,8 +6506,8 @@ SELECT id_service, service, code_service, cost FROM services$ WHERE (id_service 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string service, string code_service, global::System.Nullable<double> cost, int Original_id_service, string Original_service, string Original_code_service, global::System.Nullable<double> Original_cost) {
-            return this.Update(service, code_service, cost, Original_id_service, Original_service, Original_code_service, Original_cost, Original_id_service);
+        public virtual int Update(string service, string code_service, global::System.Nullable<double> cost, string available, int Original_id_service, string Original_service, string Original_code_service, global::System.Nullable<double> Original_cost, string Original_available) {
+            return this.Update(service, code_service, cost, available, Original_id_service, Original_service, Original_code_service, Original_cost, Original_available, Original_id_service);
         }
     }
     

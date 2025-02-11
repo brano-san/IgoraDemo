@@ -33,6 +33,7 @@
             this.backBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cancelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cancelBtn);
             this.splitContainer1.Panel1.Controls.Add(this.backBtn);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
@@ -108,12 +110,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(959, 429);
             this.dataGridView1.TabIndex = 0;
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.cancelBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelBtn.Location = new System.Drawing.Point(643, 106);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(155, 32);
+            this.cancelBtn.TabIndex = 4;
+            this.cancelBtn.Text = "Отменить заказ";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // ClientHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 580);
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(975, 619);
             this.Name = "ClientHistory";
             this.Text = "История клиента";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientHistory_FormClosing);
@@ -136,5 +153,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button cancelBtn;
     }
 }

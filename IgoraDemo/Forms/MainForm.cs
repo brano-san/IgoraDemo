@@ -18,6 +18,7 @@ namespace IgoraDemo
         public MainForm()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
             UpdateFlowPanel();
             cartOrders.CollectionChanged += onCollectionChanged;
         }
@@ -44,7 +45,23 @@ namespace IgoraDemo
         private void UpdateFlowPanel(int disc = -1)
         {
             flowLayoutPanel1.Controls.Clear();
-            List<services_> services = Program.context.services_.OrderBy(s => s.service).ToList();
+            List<services_> services = Program.context.services_.Where(s => s.service.Contains(textBox1.Text)).ToList();
+
+            if (comboBox1.SelectedIndex != null) 
+            {
+                if (comboBox1.SelectedIndex == 0) 
+                {
+                    services = services.OrderBy(s => s.service).ToList();
+                }
+                else if (comboBox1.SelectedIndex == 1)
+                {
+                    services = services.OrderBy(s => s.cost).ToList();
+                }
+                else
+                {
+                    services = services.OrderByDescending(s => s.cost).ToList();
+                }
+            }
 
             foreach (services_ service in services) 
             {
@@ -137,6 +154,21 @@ namespace IgoraDemo
             var clientsForm = new ManagerClientsForm();
             clientsForm.Owner = this;
             clientsForm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, System.EventArgs e)
+        {
+            UpdateFlowPanel();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            UpdateFlowPanel();
         }
     }
 }

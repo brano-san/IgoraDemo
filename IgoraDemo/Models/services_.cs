@@ -24,6 +24,9 @@ namespace IgoraDemo
         [StringLength(255)]
         public string code_service { get; set; }
 
+        [StringLength(255)]
+        public string available { get; set; }
+
         public double? cost { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

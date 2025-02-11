@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IgoraDemo.Forms
@@ -108,6 +102,13 @@ namespace IgoraDemo.Forms
                 return;
             }
             
+            var exitServices = Program.context.services_.FirstOrDefault(o => o.code_service == code_serviceTextBox.Text);
+            if (exitServices != null) 
+            {
+                MessageBox.Show("Товар с таким артикулом уже есть! Данные не добавлены!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var addService = new services_
             {
                 service = serviceTextBox.Text,

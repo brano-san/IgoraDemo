@@ -13,9 +13,27 @@ namespace IgoraDemo.Forms
 {
     public partial class ManagerAddClientForm : ParentForm
     {
+        private bool IsEdit = false;
+        private clients_ Client;
         public ManagerAddClientForm()
         {
             InitializeComponent();
+        }
+
+        public ManagerAddClientForm(clients_ client)
+        {
+            InitializeComponent();
+            IsEdit = true;
+            Client = client;
+
+            fioTextBox.Text = client.fio;
+            codeTextBox.Text = client.code.ToString();
+            pasportTextBox.Text = client.pasport;
+            born_dateDateTimePicker.Value = client.born_date.Value;
+            addressTextBox.Text = client.address;
+            emailTextBox.Text = client.email;
+            passwordTextBox.Text = client.password;
+            ratingTextBox.Text = client.rating.ToString();
         }
 
         public bool ValidateClientData()
@@ -90,6 +108,47 @@ namespace IgoraDemo.Forms
             if (!ValidateClientData())
             {
                 return;
+            }
+            
+            if (IsEdit)
+            {
+                //var client1 = Program.context.clients_.FirstOrDefault(c => c.id_client == Client.id_client);
+                //if (client1 == null)
+                //{
+                //    MessageBox.Show("Некорретный пользователь!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
+
+                //client1.email = Client.email;
+                //client1.password = Client.password;
+                //client1.born_date = Client.born_date;
+                //client1.rating = Client
+
+                Client.fio = fioTextBox.Text;
+                Client.code = Convert.ToDouble(codeTextBox.Text);
+                Client.pasport = pasportTextBox.Text;
+                Client.born_date = born_dateDateTimePicker.Value;
+                Client.address = addressTextBox.Text;
+                Client.email = emailTextBox.Text;
+                Client.password = passwordTextBox.Text;
+                Client.rating = Convert.ToInt32(ratingTextBox.Text);
+
+                Program.context.SaveChanges();
+                MessageBox.Show("Клиент был успешно изменен!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                return;
+            }
+
+
+            var code = Convert.ToDouble(codeTextBox.Text);
+            var exitClients = Program.context.clients_.FirstOrDefault(c => c.code == code);
+            if (exitClients != null)
+            {
+                if (exitClients.pasport == pasportTextBox.Text)
+                {
+                    MessageBox.Show("Клиент с таким кодом и паспортом уже есть! Данные не добавлены!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             clients_ client = new clients_();

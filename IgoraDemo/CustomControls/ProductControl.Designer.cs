@@ -29,26 +29,187 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.discount = new System.Windows.Forms.Label();
-            this.costDiscLabel = new System.Windows.Forms.Label();
-            this.costLabel = new System.Windows.Forms.Label();
-            this.descLabel = new System.Windows.Forms.Label();
-            this.nameLabel = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавитьВКорзинуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.добавитьВКорзинуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.descLabel = new System.Windows.Forms.Label();
+            this.costLabel = new System.Windows.Forms.Label();
+            this.costDiscLabel = new System.Windows.Forms.Label();
+            this.discount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьВКорзинуToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 26);
+            // 
+            // добавитьВКорзинуToolStripMenuItem
+            // 
+            this.добавитьВКорзинуToolStripMenuItem.Name = "добавитьВКорзинуToolStripMenuItem";
+            this.добавитьВКорзинуToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.добавитьВКорзинуToolStripMenuItem.Text = "Добавить в корзину";
+            this.добавитьВКорзинуToolStripMenuItem.Click += new System.EventHandler(this.добавитьВКорзинуToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ContextMenuStrip = this.contextMenuStrip1;
+            this.pictureBox1.Image = global::IgoraDemo.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 149);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.ContextMenuStrip = this.contextMenuStrip1;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(429, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 15);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Есть";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ContextMenuStrip = this.contextMenuStrip1;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(426, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Количество на складе:";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.ContextMenuStrip = this.contextMenuStrip1;
+            this.nameLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.Location = new System.Drawing.Point(134, 17);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(36, 15);
+            this.nameLabel.TabIndex = 0;
+            this.nameLabel.Text = "label1";
+            // 
+            // descLabel
+            // 
+            this.descLabel.AutoSize = true;
+            this.descLabel.ContextMenuStrip = this.contextMenuStrip1;
+            this.descLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.descLabel.Location = new System.Drawing.Point(66, 43);
+            this.descLabel.Name = "descLabel";
+            this.descLabel.Size = new System.Drawing.Size(36, 15);
+            this.descLabel.TabIndex = 1;
+            this.descLabel.Text = "label1";
+            // 
+            // costLabel
+            // 
+            this.costLabel.AutoSize = true;
+            this.costLabel.ContextMenuStrip = this.contextMenuStrip1;
+            this.costLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.costLabel.Location = new System.Drawing.Point(50, 74);
+            this.costLabel.Name = "costLabel";
+            this.costLabel.Size = new System.Drawing.Size(36, 15);
+            this.costLabel.TabIndex = 3;
+            this.costLabel.Text = "label1";
+            // 
+            // costDiscLabel
+            // 
+            this.costDiscLabel.AutoSize = true;
+            this.costDiscLabel.ContextMenuStrip = this.contextMenuStrip1;
+            this.costDiscLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.costDiscLabel.Location = new System.Drawing.Point(253, 74);
+            this.costDiscLabel.Name = "costDiscLabel";
+            this.costDiscLabel.Size = new System.Drawing.Size(36, 15);
+            this.costDiscLabel.TabIndex = 4;
+            this.costDiscLabel.Text = "label1";
+            this.costDiscLabel.Visible = false;
+            // 
+            // discount
+            // 
+            this.discount.AutoSize = true;
+            this.discount.ContextMenuStrip = this.contextMenuStrip1;
+            this.discount.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.discount.Location = new System.Drawing.Point(59, 104);
+            this.discount.Name = "discount";
+            this.discount.Size = new System.Drawing.Size(36, 15);
+            this.discount.TabIndex = 5;
+            this.discount.Text = "label1";
+            this.discount.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ContextMenuStrip = this.contextMenuStrip1;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Наименование услуги:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ContextMenuStrip = this.contextMenuStrip1;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(7, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Артикул:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ContextMenuStrip = this.contextMenuStrip1;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(7, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Цена:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ContextMenuStrip = this.contextMenuStrip1;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(147, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 15);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Цена со скидкой:";
+            this.label6.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ContextMenuStrip = this.contextMenuStrip1;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(6, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 15);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Скидка:";
+            this.label7.Visible = false;
             // 
             // groupBox1
             // 
@@ -69,167 +230,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ContextMenuStrip = this.contextMenuStrip1;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(6, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 15);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Скидка:";
-            this.label7.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ContextMenuStrip = this.contextMenuStrip1;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(147, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 15);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Цена со скидкой:";
-            this.label6.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ContextMenuStrip = this.contextMenuStrip1;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(7, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Цена:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ContextMenuStrip = this.contextMenuStrip1;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(7, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Артикул:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ContextMenuStrip = this.contextMenuStrip1;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(6, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Наименование услуги:";
-            // 
-            // discount
-            // 
-            this.discount.AutoSize = true;
-            this.discount.ContextMenuStrip = this.contextMenuStrip1;
-            this.discount.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.discount.Location = new System.Drawing.Point(59, 104);
-            this.discount.Name = "discount";
-            this.discount.Size = new System.Drawing.Size(36, 15);
-            this.discount.TabIndex = 5;
-            this.discount.Text = "label1";
-            this.discount.Visible = false;
-            // 
-            // costDiscLabel
-            // 
-            this.costDiscLabel.AutoSize = true;
-            this.costDiscLabel.ContextMenuStrip = this.contextMenuStrip1;
-            this.costDiscLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.costDiscLabel.Location = new System.Drawing.Point(253, 74);
-            this.costDiscLabel.Name = "costDiscLabel";
-            this.costDiscLabel.Size = new System.Drawing.Size(36, 15);
-            this.costDiscLabel.TabIndex = 4;
-            this.costDiscLabel.Text = "label1";
-            this.costDiscLabel.Visible = false;
-            // 
-            // costLabel
-            // 
-            this.costLabel.AutoSize = true;
-            this.costLabel.ContextMenuStrip = this.contextMenuStrip1;
-            this.costLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.costLabel.Location = new System.Drawing.Point(50, 74);
-            this.costLabel.Name = "costLabel";
-            this.costLabel.Size = new System.Drawing.Size(36, 15);
-            this.costLabel.TabIndex = 3;
-            this.costLabel.Text = "label1";
-            // 
-            // descLabel
-            // 
-            this.descLabel.AutoSize = true;
-            this.descLabel.ContextMenuStrip = this.contextMenuStrip1;
-            this.descLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.descLabel.Location = new System.Drawing.Point(66, 43);
-            this.descLabel.Name = "descLabel";
-            this.descLabel.Size = new System.Drawing.Size(36, 15);
-            this.descLabel.TabIndex = 1;
-            this.descLabel.Text = "label1";
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.ContextMenuStrip = this.contextMenuStrip1;
-            this.nameLabel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.Location = new System.Drawing.Point(134, 17);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(36, 15);
-            this.nameLabel.TabIndex = 0;
-            this.nameLabel.Text = "label1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox1.Image = global::IgoraDemo.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 149);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ContextMenuStrip = this.contextMenuStrip1;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(469, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Есть";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ContextMenuStrip = this.contextMenuStrip1;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(426, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Количество на складе:";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьВКорзинуToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 26);
-            // 
-            // добавитьВКорзинуToolStripMenuItem
-            // 
-            this.добавитьВКорзинуToolStripMenuItem.Name = "добавитьВКорзинуToolStripMenuItem";
-            this.добавитьВКорзинуToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.добавитьВКорзинуToolStripMenuItem.Text = "Добавить в корзину";
-            this.добавитьВКорзинуToolStripMenuItem.Click += new System.EventHandler(this.добавитьВКорзинуToolStripMenuItem_Click);
-            // 
             // ProductControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,32 +245,31 @@
             this.Name = "ProductControl";
             this.Padding = new System.Windows.Forms.Padding(2);
             this.Size = new System.Drawing.Size(563, 165);
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label discount;
-        private System.Windows.Forms.Label costDiscLabel;
-        private System.Windows.Forms.Label costLabel;
-        private System.Windows.Forms.Label descLabel;
-        private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem добавитьВКорзинуToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label descLabel;
+        private System.Windows.Forms.Label costLabel;
+        private System.Windows.Forms.Label costDiscLabel;
+        private System.Windows.Forms.Label discount;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

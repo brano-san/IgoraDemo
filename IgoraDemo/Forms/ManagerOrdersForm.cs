@@ -35,6 +35,7 @@ namespace IgoraDemo.Forms
             ordersRows.Clear();
             var orders = Program.context.orders_.GroupBy(or => or.order_number).ToList();
 
+
             foreach (var o in orders)
             {
                 OrdersRow ordersRow = new OrdersRow();
@@ -49,7 +50,10 @@ namespace IgoraDemo.Forms
                 ordersRow.rating = o.First().clients_.rating;
                 ordersRow.status = status.status;
 
-                ordersRows.Add(ordersRow);
+                if (ordersRow.Fio.ToLower().Contains(SearchTb.Text.ToLower()))
+                {
+                    ordersRows.Add(ordersRow);
+                }
             }
 
             dataGridView1.DataSource = null;
@@ -77,12 +81,49 @@ namespace IgoraDemo.Forms
             var editOrders = Program.context.orders_.Where(o => o.order_number == id).ToList();
             foreach (var order in editOrders)
             {
-                order.status_id = 2;
+                if (order.status_id == 1)
+                {
+                    order.status_id = 2;
+                }
+                else if (order.status_id == 2) 
+                {
+                    order.status_id = 3;
+                }
+                else
+                {
+                    MessageBox.Show("Статус заказа \"Завершен\". Изменить нельзя", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 Program.context.SaveChanges();
             }
 
             UpdateData();
             MessageBox.Show("Статус был обновлён!", "Статус", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void SearchTb_TextChanged(object sender, EventArgs e)
+        {
+            UpdateData();
+        }
+
+        private void reitBtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Необходимо выбрать строку для подтверждения", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selectedRow = dataGridView1.SelectedRows[0];
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Необходимо выбрать строку для подтверждения", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var id = (int)selectedRow.Cells["orderNumber"].Value;
+
+            var editOrders = Program.context.orders_.Where(o => o.order_number == id).ToList();
         }
     }
 }

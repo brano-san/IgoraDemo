@@ -51,5 +51,41 @@ namespace IgoraDemo.Forms
         {
             dataGridView1.DataSource = Program.context.clients_.Where(c => c.fio.Contains(SearchTb.Text)).ToList();
         }
+
+        private void Editbtn_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Необходимо выбрать строку для редактирования", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selService = dataGridView1.SelectedRows[0];
+            if (selService == null)
+            {
+                MessageBox.Show("Необходимо выбрать строку для редактирования", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var id = (int)selService.Cells[0].Value;
+            
+            var client = Program.context.clients_.FirstOrDefault(c => c.id_client == id);
+            if (client == null)
+            {
+                MessageBox.Show("Некорретный пользователь!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var clientsForm = new ManagerAddClientForm(client);
+            clientsForm.Owner = this;
+            clientsForm.ShowDialog();
+
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "igoraDataSet._statuses_". При необходимости она может быть перемещена или удалена.
+            this.statuses_TableAdapter.Fill(this.igoraDataSet._statuses_);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "igoraDataSet._enter_type_". При необходимости она может быть перемещена или удалена.
+            this.enter_type_TableAdapter.Fill(this.igoraDataSet._enter_type_);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "igoraDataSet._clients_". При необходимости она может быть перемещена или удалена.
+            this.clients_TableAdapter.Fill(this.igoraDataSet._clients_);
+        }
     }
 }

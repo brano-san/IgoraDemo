@@ -98,7 +98,7 @@
             this.CancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelBtn.Location = new System.Drawing.Point(194, 129);
+            this.CancelBtn.Location = new System.Drawing.Point(194, 125);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(140, 32);
@@ -111,7 +111,7 @@
             this.AuthBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AuthBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
             this.AuthBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuthBtn.Location = new System.Drawing.Point(32, 129);
+            this.AuthBtn.Location = new System.Drawing.Point(32, 125);
             this.AuthBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AuthBtn.Name = "AuthBtn";
             this.AuthBtn.Size = new System.Drawing.Size(140, 32);
@@ -159,8 +159,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 270);
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(393, 309);
             this.Name = "AuthForm";
-            this.Text = "AuthForm";
+            this.Text = "Авторизация";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

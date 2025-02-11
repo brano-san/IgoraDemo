@@ -105,7 +105,7 @@
             // 
             this.serviceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.services_BindingSource, "service", true));
             this.serviceTextBox.Location = new System.Drawing.Point(119, 28);
-            this.serviceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.serviceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.serviceTextBox.Name = "serviceTextBox";
             this.serviceTextBox.Size = new System.Drawing.Size(249, 26);
             this.serviceTextBox.TabIndex = 7;
@@ -114,7 +114,7 @@
             // 
             this.code_serviceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.services_BindingSource, "code_service", true));
             this.code_serviceTextBox.Location = new System.Drawing.Point(119, 89);
-            this.code_serviceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.code_serviceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.code_serviceTextBox.Name = "code_serviceTextBox";
             this.code_serviceTextBox.Size = new System.Drawing.Size(249, 26);
             this.code_serviceTextBox.TabIndex = 9;
@@ -123,7 +123,7 @@
             // 
             this.costTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.services_BindingSource, "cost", true));
             this.costTextBox.Location = new System.Drawing.Point(119, 145);
-            this.costTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.costTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.costTextBox.Name = "costTextBox";
             this.costTextBox.Size = new System.Drawing.Size(249, 26);
             this.costTextBox.TabIndex = 11;
@@ -131,7 +131,7 @@
             // addEditBtn
             // 
             this.addEditBtn.Location = new System.Drawing.Point(16, 204);
-            this.addEditBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addEditBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addEditBtn.Name = "addEditBtn";
             this.addEditBtn.Size = new System.Drawing.Size(159, 32);
             this.addEditBtn.TabIndex = 12;
@@ -142,7 +142,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(208, 204);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 32);
             this.button1.TabIndex = 13;
@@ -164,6 +164,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MinimumSize = new System.Drawing.Size(401, 287);
             this.Name = "AdminAddEditForm";
             this.Text = "Добавление товара";
             this.Load += new System.EventHandler(this.AdminAddEditForm_Load);

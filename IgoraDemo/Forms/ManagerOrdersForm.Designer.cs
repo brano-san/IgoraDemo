@@ -33,11 +33,13 @@
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orders_TableAdapter = new IgoraDemo.Models.IgoraDataSetTableAdapters.orders_TableAdapter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AcceptBtn = new System.Windows.Forms.Button();
+            this.SearchTb = new System.Windows.Forms.TextBox();
             this.BackBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.AcceptBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.igoraDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -72,7 +74,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.AcceptBtn);
+            this.splitContainer1.Panel1.Controls.Add(this.SearchTb);
             this.splitContainer1.Panel1.Controls.Add(this.BackBtn);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
@@ -84,6 +88,37 @@
             this.splitContainer1.SplitterDistance = 152;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(510, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Поиск";
+            // 
+            // AcceptBtn
+            // 
+            this.AcceptBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AcceptBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
+            this.AcceptBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AcceptBtn.Location = new System.Drawing.Point(504, 106);
+            this.AcceptBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.AcceptBtn.Name = "AcceptBtn";
+            this.AcceptBtn.Size = new System.Drawing.Size(189, 32);
+            this.AcceptBtn.TabIndex = 7;
+            this.AcceptBtn.Text = "Подтвердить заказы";
+            this.AcceptBtn.UseVisualStyleBackColor = false;
+            this.AcceptBtn.Click += new System.EventHandler(this.AcceptBtn_Click);
+            // 
+            // SearchTb
+            // 
+            this.SearchTb.Location = new System.Drawing.Point(504, 47);
+            this.SearchTb.Name = "SearchTb";
+            this.SearchTb.Size = new System.Drawing.Size(331, 26);
+            this.SearchTb.TabIndex = 10;
+            this.SearchTb.TextChanged += new System.EventHandler(this.SearchTb_TextChanged);
             // 
             // BackBtn
             // 
@@ -123,26 +158,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(854, 455);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // AcceptBtn
-            // 
-            this.AcceptBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AcceptBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(140)))), ((int)(((byte)(81)))));
-            this.AcceptBtn.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AcceptBtn.Location = new System.Drawing.Point(504, 106);
-            this.AcceptBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.AcceptBtn.Name = "AcceptBtn";
-            this.AcceptBtn.Size = new System.Drawing.Size(189, 32);
-            this.AcceptBtn.TabIndex = 7;
-            this.AcceptBtn.Text = "Подтвердить заказы";
-            this.AcceptBtn.UseVisualStyleBackColor = false;
-            this.AcceptBtn.Click += new System.EventHandler(this.AcceptBtn_Click);
             // 
             // ManagerOrdersForm
             // 
@@ -150,6 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 613);
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(870, 652);
             this.Name = "ManagerOrdersForm";
             this.Text = "Заказы";
             this.Load += new System.EventHandler(this.ManagerOrdersForm_Load);
@@ -176,5 +201,7 @@
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private Models.IgoraDataSetTableAdapters.orders_TableAdapter orders_TableAdapter;
         private System.Windows.Forms.Button AcceptBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox SearchTb;
     }
 }
